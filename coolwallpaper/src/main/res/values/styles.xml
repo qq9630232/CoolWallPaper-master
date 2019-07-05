@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="elita_line_w">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#F0F0F0</item>
+    </style>
+    <style name="elita_line_h">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#F0F0F0</item>
+    </style>
+    <!--主页右边的菜单的分割线-->
+    <style name="menu_right_divider">
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--ActionBar上的标题-->
+    <style name="action_bar_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/action_bar_title_size</item>
+    </style>
+
+    <!--ActionBar上的返回箭头-->
+    <style name="action_bar_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:src">@drawable/btn_left_arrow</item>
+    </style>
+
+    <!--PopupWindow进出场动画-->
+    <style name="popup_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/enter_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/exit_to_bottom</item>
+    </style>
+
+    <!--activity从下到上的动画-->
+    <style name="activity_bottom_top_anim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/enter_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/exit_to_bottom</item>
+    </style>
+    <style name="FullScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+</resources>
+

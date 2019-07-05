@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--标题栏-->
+    <LinearLayout
+        android:id="@+id/ly_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:background="@color/orange"
+        >
+
+        <!--左边的箭头-->
+        <ImageView
+            android:id="@+id/ly_left"
+            style="@style/action_bar_arrow"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/action_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="分类"
+            />
+
+    </LinearLayout>
+
+    <!--图片列表-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv_paper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ly_title"
+        android:divider="@null"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

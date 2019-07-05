@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主页-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!--进度条页面-->
+    <RelativeLayout
+        android:id="@+id/rl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        >
+
+        <!--进度条图片-->
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/loading"
+            />
+
+        <!--文字-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_loading"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="玩命加载中...."
+            android:textSize="@dimen/text_size_big"
+            />
+    </RelativeLayout>
+
+
+
+    <!--&lt;!&ndash;上面部分&ndash;&gt;-->
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ly_action_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--&gt;-->
+
+        <!--&lt;!&ndash;标题 &ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ly_title"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@color/halfTransparent"-->
+            <!--android:orientation="horizontal"-->
+            <!--&gt;-->
+
+            <!--&lt;!&ndash;左边的icon&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ly_set"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="10dp"-->
+                <!--&gt;-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/icon_moreset"-->
+                    <!--/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--&lt;!&ndash;中间的标题&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--&gt;-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_title"-->
+                    <!--style="@style/action_bar_title"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="风景"-->
+                    <!--/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--&lt;!&ndash;右边的MENU&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="horizontal"-->
+                <!--&gt;-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_search"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:src="@drawable/icon_seach"-->
+                    <!--/>-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_menu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:src="@drawable/icon_select"-->
+                    <!--/>-->
+
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+        <!--&lt;!&ndash;指示器&ndash;&gt;-->
+      <!---->
+
+    <!--</LinearLayout>-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tb_indicator"
+        app:tabTextColor="@color/black"
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="@color/orange"
+        app:tabSelectedTextColor="@color/orange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_paper"
+        android:layout_below="@id/tb_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

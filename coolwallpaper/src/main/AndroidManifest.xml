@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="com.coolwallpaper">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 下载图片信息的服务 -->
+        <service android:name=".service.PictureResultGetServevice">
+            <intent-filter>
+                <action android:name="action_download_result_service" />
+            </intent-filter>
+        </service>
+
+        <!-- 友盟的AppKey -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5721d261e0f55ac016001d53" />
+
+        <!-- 图片详情 -->
+        <activity
+            android:name=".ShowPictureDetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- 主页 -->
+        <activity android:name=".HomePageActivity" />
+
+        <!-- 本地壁纸 -->
+        <activity android:name=".LocalPaperActivity" />
+        <activity
+            android:name=".FavoriteActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <!-- 图片多选界面 -->
+        <activity
+            android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
+            android:configChanges="orientation|screenSize" />
+
+        <!-- 图片剪切框架uCrop -->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- 搜索 -->
+        <activity
+            android:name=".SearchActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- 搜索结果显示页面 -->
+        <activity
+            android:name=".ShowSearchListActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- 个人中心 -->
+        <activity android:name=".MyCenterActivity" />
+
+        <!-- 友盟activiyu -->
+        <activity
+            android:name="com.umeng.socialize.editorpage.ShareActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.UMDefault" />
+
+        <!-- 新浪微博 -->
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- &lt;!&ndash; 新浪微博服务 &ndash;&gt; -->
+        <!-- <service -->
+        <!-- android:name="com.sina.weibo.sdk.net.DownloadService" -->
+        <!-- android:exported="false" /> -->
+
+
+        <!-- qq与qqzone -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 登录界面 -->
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/activity_bottom_top_anim" />
+
+        <!-- 获取用户在Bmob上的收藏的服务 -->
+        <service android:name=".service.UserFavouriteGetService">
+            <intent-filter>
+                <action android:name="action_user_favourite_get_service" />
+            </intent-filter>
+        </service>
+
+        <!-- 上传图片的界面 -->
+        <activity android:name=".UploadActivity" />
+        <!-- 上传图片的启动类 -->
+        <activity android:name=".UploadActivityStarter" />
+        <!-- 图片上传服务 -->
+        <service android:name=".service.BmobUploadService" />
+        <!-- 升级服务 -->
+        <service android:name=".service.UpdateService" />
+        <!-- 查看用户上传图片列表的类 -->
+        <activity android:name=".ShowUserUploadPictureList" />
+        <activity
+            android:name=".SettingActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".AboutUsActivity" />
+        <activity
+            android:name=".utils.SortListActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".DetatilsActivity"
+            android:theme="@style/FullScreenTheme" />
+        <activity android:name=".fragment.FindActivity" />
+        <activity
+            android:name=".LaunchActivity"
+            android:theme="@style/FullScreenTheme">
+
+        </activity>
+        <activity android:name=".WebActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:process=":multiprocess"
+            tools:node="replace" />
+        <service
+            android:name=".download.JService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+        <!-- Required since 3.0.7 -->
+        <!-- 新的 tag/alias 接口结果返回需要开发者配置一个自定的广播 -->
+        <!-- 3.3.0开始所有事件将通过该类回调 -->
+        <!-- 该广播需要继承 JPush 提供的 JPushMessageReceiver 类, 并如下新增一个 Intent-Filter -->
+        <receiver
+            android:name=".download.JBroadCast"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service android:name=".download.DownloadService" />
+    </application>
+
+</manifest>

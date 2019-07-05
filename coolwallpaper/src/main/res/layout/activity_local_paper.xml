@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--本地壁纸-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+    >
+
+    <!--列表栏-->
+    <GridView
+        android:id="@+id/gv_paper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/action_bar_height"
+        android:gravity="center"
+        android:horizontalSpacing="3dp"
+        android:numColumns="2"
+        android:verticalSpacing="3dp"
+        android:visibility="gone"
+        >
+    </GridView>
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/ly_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:background="@drawable/coolwallpaper_bar_bg_2"
+        >
+
+        <LinearLayout
+            android:id="@+id/ly_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/btn_left_arrow"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="本地壁纸"
+            android:textColor="@color/white"
+            android:textSize="@dimen/action_bar_title_size"
+            />
+
+        <!--右边的按钮-->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            >
+
+            <!--普通状态显示-->
+            <ImageView
+                android:id="@+id/iv_del"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:src="@drawable/btn_rubbish"
+                android:visibility="visible"
+                />
+
+            <!--进入多选模式后显示-->
+            <LinearLayout
+                android:id="@+id/ly_del"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/tv_del"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全选"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_big_x1"
+                    />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!--空白页-->
+    <LinearLayout
+        android:id="@+id/ly_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ly_title"
+        android:background="@color/lavender"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_phone"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加本地图片"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+    <!--最下面的确认删除按钮-->
+    <LinearLayout
+        android:id="@+id/ly_del_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_blue"
+        android:gravity="center"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_del_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除(11)"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big_x1"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

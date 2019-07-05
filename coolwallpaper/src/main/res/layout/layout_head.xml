@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/title_bar"
+
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/orange">
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/ib_left_head"-->
+        <!--android:layout_width="33dp"-->
+        <!--android:layout_height="33dp"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:onClick="onClick"-->
+
+        <!--android:visibility="invisible"-->
+        <!--android:contentDescription="left"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.02"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.0" />-->
+
+    <TextView
+        android:id="@+id/tv_content_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

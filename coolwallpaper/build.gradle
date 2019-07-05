@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
+    buildToolsVersion project.BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId "com.coolwallpaper"
+        minSdkVersion Integer.parseInt(project.MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "66d0e19b60d3f6351c04c8d7", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    sourceSets {
+//        main {
+//            jni.srcDirs = []
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+}
+
+//本地仓库，用于引用aar文件
+repositories {
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:25.3.1'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'cn.jiguang.sdk:jpush:3.3.1'  // 此处以JPush 3.3.1 版本为例。
+    compile 'cn.jiguang.sdk:jcore:2.0.1'  // 此处以JCore 2.0.1 版本为例。
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':sharelib')
+    compile project(':library-xUtils')
+    compile project(':library-PullToRefresh')
+    compile project(':library-SelectableRoundedImageViewLib')
+    compile project(':library-ResideMenu')
+    //ImgaeView允许四个角的每一个有不同的半径值
+    compile project(':library-MultiImageSelector')
+    //图片多选库
+    compile project(':library-ViewPagerIndicator')
+    //Jackworth的ViewPagerIndicator库
+    compile project(':library-Alertview')
+    //仿ios的对话框
+    compile project(':library-CircleProgress')
+    //圆形进度条CircleProgress
+    compile project(':library-AndroidTagGroup')
+    //流式布局
+    compile project(':library-umengsocialsdk')
+    //友盟社会化分享组件
+    compile project(':library-AndroidCommon')
+    //AndroidCommon工具包
+    compile(name: 'android-gif-drawable-1.1.15', ext: 'aar')
+    //gif显示库android-gif-drawable引用本地aar文件
+    compile(name: 'logger-release', ext: 'aar')
+    //日志框架Loggers
+    compile(name: 'fresco-0.9.0', ext: 'aar')
+    //facebook的图片加载框架fresco
+    compile(name: 'ucrop-2.2.0', ext: 'aar')
+    //图片裁剪框架
+    compile(name: 'rxandroid-1.1.0', ext: 'aar')
+    //RxAndroid框架
+
+}

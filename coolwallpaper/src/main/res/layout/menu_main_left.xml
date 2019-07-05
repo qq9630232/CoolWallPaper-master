@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--左边的SlidingMenu-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="40dp"
+    >
+
+
+    <!--个人中心-->
+    <LinearLayout
+        android:id="@+id/ly_my_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <com.joooonho.SelectableRoundedImageView
+            android:id="@+id/iv_face"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_face"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="个人中心"
+            android:textColor="@color/wheat"
+            />
+    </LinearLayout>
+
+    <!--我的壁纸-->
+    <LinearLayout
+        android:id="@+id/ly_my_wallpaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_download"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的收藏"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <!--本机相册-->
+    <LinearLayout
+        android:id="@+id/ly_local_paper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_pic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本机相册"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <!--我要供图-->
+    <LinearLayout
+        android:id="@+id/ly_provide_paper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_pen"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我要供图"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <!--用户上传-->
+    <LinearLayout
+        android:id="@+id/ly_user_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_user_pic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户上传"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <!--检查升级-->
+    <LinearLayout
+        android:id="@+id/ly_check_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_upload"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="检查升级"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <!--更多设置-->
+    <LinearLayout
+        android:id="@+id/ly_more_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_moreset"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多设置"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
