@@ -36,6 +36,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     FrameLayout mHomeContainer;
 
 
+
     private FragmentManager manager;
 
     private MainModel model = new MainModel();
